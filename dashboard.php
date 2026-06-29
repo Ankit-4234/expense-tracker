@@ -16,7 +16,7 @@ $count_result=mysqli_query($conn,$count_sql);
 $count_row=mysqli_fetch_assoc($count_result);
 $count=$count_row['count'];
 
-$total_sql="SELECT SUM(amount) AS month_total FROM expense WHERE user_id=$user_id" AND MONTH(expense_date)=MONTH(CURDATE()) AND YEAR(expense_date)=YEAR(CURDATE());
+$month_sql="SELECT SUM(amount) AS month_total FROM expense WHERE user_id=$user_id AND MONTH(expense_date)=MONTH(CURDATE()) AND YEAR(expense_date)=YEAR(CURDATE())";
 $month_result=mysqli_query($conn,$month_sql);
 $month_row=mysqli_fetch_assoc($month_result);
 $month_total=$month_row['month_total'] ? $month_row['month_total'] : 0;
