@@ -27,3 +27,24 @@ if(isset($_POST['update'])){
     header("Location: hasboard.php");
     exit();
 }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit expense</title>
+</head>
+<body>
+    <div class="container">
+        <h1> edit expenses </h1>
+        <form method="POST">
+            <input type="text" name="title" value="<?php echo $row['title']; ?>" required> <br> <br>
+            <input type="number" name="amount" value="<?php echo $row['amount']; ?>" required> <br> <br>
+            <input type="text" name="category" value="<?php echo $row['category'] ?>" required> <br> <br>
+            <input type="date" name="expense_date" value="<?php echo $row['expense_date'] ?>" required> <br> <br>
+            <button type="submit" name="update"> update expense </button>
+</form>
+</div>
+</body>
+</html>
