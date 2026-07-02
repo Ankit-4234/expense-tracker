@@ -21,7 +21,7 @@ $month_result=mysqli_query($conn,$month_sql);
 $month_row=mysqli_fetch_assoc($month_result);
 $month_total=$month_row['month_total'] ? $month_row['month_total'] : 0;
 
-$expense_sql="SELECT * FROM expenses WHERE user_id=$user_id ORDER BY expense_datess DESC";
+$expense_sql="SELECT * FROM expenses WHERE user_id=$user_id ORDER BY expense_date DESC";
 $expense_result=mysqli_query($conn,$expense_sql);
 ?>
 <!DOCTYPE html>
