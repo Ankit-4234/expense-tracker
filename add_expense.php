@@ -7,9 +7,9 @@ if(!isset($_SESSION['user_id'])){
 include"db.php";
 $user_id = $_SESSION["user_id"];
 if(isset($_POST['submit'])){
-$title=$_POST['titlte'];
+$title=$_POST['title'];
 $amount=$_POST['amount'];
-$catergory=$_POST['category'];
+$category=$_POST['category'];
 $expense_date=$_POST['expense_date'];
 
 $sql="INSERT INTO expenses(user_id,title,amount,category,expense_date) 

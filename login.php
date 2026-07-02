@@ -28,14 +28,14 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="auth_container">
+    <div class="auth-container">
         <h1>login</h1>
         <?php if(isset($error)){ ?>
-        <p class="error"> <?php echo $error; ?>
+        <p class="error"> <?php echo $error; ?></p>
     <?php } ?>
     <form method="POST">
         <input type="email" name="email" placeholder="email" required> <br> <br>
-        <input type="password" name="passsword" placeholder="password" required> <br> <br>
+        <input type="password" name="password" placeholder="password" required> <br> <br>
         <button type="submit" name="submit"> login </button>
 </form>
 <p>no account? <a href="register.php"> register </a> </p>

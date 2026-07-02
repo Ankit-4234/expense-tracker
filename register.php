@@ -3,15 +3,15 @@ include "db.php";
 if(isset($_POST['submit'])){
     $name=$_POST['name'];
     $email=$_POST['email'];
-    $password=$POST['password'];
+    $password=$_POST['password'];
     $confirm=$_POST['confirm'];
     if($password !== $confirm){
         $error="password does not match";
     }
     else{
         $hashed=password_hash($password,PASSWORD_DEFAULT);
-        $sql="INSERT INTO users(name,email,password) VALUES('name','email','hashed')";
-        if(mysql_query($conn,$sql)){
+        $sql="INSERT INTO users(name,email,password) VALUES('$name','$email','$hashed')";
+        if(mysqli_query($conn,$sql)){
             header("Location: login.php");
             exit();
         }
@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="auth_container">
+    <div class="auth-container">
     <h1> Create account </h1>
     <?php if(isset($error)) {?>
     <p class="error"><?php echo $error; ?></p>
